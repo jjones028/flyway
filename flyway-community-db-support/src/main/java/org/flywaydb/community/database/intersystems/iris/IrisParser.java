@@ -5,7 +5,7 @@ import org.flywaydb.core.internal.parser.Parser;
 import org.flywaydb.core.internal.parser.ParsingContext;
 
 public class IrisParser extends Parser {
-    protected IrisParser(Configuration configuration, ParsingContext parsingContext, int peekDepth) {
-        super(configuration, parsingContext, peekDepth);
+    public IrisParser(Configuration configuration, ParsingContext parsingContext) {
+        super(configuration, parsingContext, 3);
     }
 }
