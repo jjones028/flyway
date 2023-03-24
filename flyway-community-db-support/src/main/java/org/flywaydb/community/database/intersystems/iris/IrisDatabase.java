@@ -14,7 +14,7 @@ public class IrisDatabase extends Database {
 
     @Override
     protected Connection doGetConnection(java.sql.Connection connection) {
-        return null;
+        return new IrisConnection(this, connection);
     }
 
     @Override

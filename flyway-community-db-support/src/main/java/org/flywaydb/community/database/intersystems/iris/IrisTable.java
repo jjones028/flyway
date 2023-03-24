@@ -20,16 +20,16 @@ public class IrisTable extends Table {
 
     @Override
     protected void doDrop() throws SQLException {
-
+        jdbcTemplate.execute("DROP TABLE " + database.quote(schema.getName(), name));
     }
 
     @Override
     protected boolean doExists() throws SQLException {
-        return false;
+        return exists(schema, null, name);
     }
 
     @Override
     protected void doLock() throws SQLException {
-
+        jdbcTemplate.execute("SELECT * FROM " + this + " FOR UPDATE");
     }
 }
