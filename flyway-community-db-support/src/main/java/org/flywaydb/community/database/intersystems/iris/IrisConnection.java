@@ -17,6 +17,6 @@ public class IrisConnection extends Connection<IrisDatabase> {
 
     @Override
     public Schema getSchema(String name) {
-        return null;
+        return new IrisSchema(jdbcTemplate, database, name);
     }
 }
